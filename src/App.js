@@ -36,13 +36,13 @@ class App extends React.Component {
                         <input
                             type="text"
                             id="username"
-                            placeholder="Enter a name"
+                            placeholder="Enter a Name"
                             value={this.state.name}
                             onChange={this.handleNameChange}/>
                         <input
                             type="number"
                             id="age"
-                            placeholder="Enter an age"
+                            placeholder="Enter an Age"
                             value={this.state.age}
                             onChange={this.handleAgeChange}/>
                         <button type="submit">Submit</button>

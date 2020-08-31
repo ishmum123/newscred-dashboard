@@ -1,0 +1,25 @@
+version: '3.7'
+
+services:
+
+  app:
+    container_name: app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - '.:/app'
+      - '/app/node_modules'
+    ports:
+      - 3001:3000
+    stdin_open: true
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    external_links:
+      - mongo
+
+  mongo:
+    container_name: mongo
+    image: mongo
+    ports:
+      - '27017:27017'
